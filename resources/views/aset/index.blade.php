@@ -26,3 +26,4 @@
     </tr>
     @endforeach
 </table>
+<a href="/aset/create">Tambahkan Aset</a>

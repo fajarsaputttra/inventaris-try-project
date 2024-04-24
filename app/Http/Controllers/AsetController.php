@@ -11,4 +11,11 @@ class AsetController extends Controller
         $aset = Aset::all();
         return view('aset.index',compact(['aset']));
     }
+    public function create(){
+        return view('aset.create');
+    }
+    public function store(Request $request){
+        Aset::create($request->except(['_token','submit']));
+        return redirect('/aset');
+    }
 }

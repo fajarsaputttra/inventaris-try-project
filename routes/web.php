@@ -20,11 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Get Aset
+// Aset
 Route::get('/aset',[AsetController::class,'index']);
+Route::get('/aset/create',[AsetController::class,'create']);
+Route::post('/aset/store',[AsetController::class,'store']);
 
-//Get Kategori Aset
+//Kategori Aset
 Route::get('/kategoriaset',[KategoriAsetController::class,'index']);
 
-//Get Lokasi Aset
+//Lokasi Aset
 Route::get('/lokasiaset',[LokasiAsetController::class,'index']);
