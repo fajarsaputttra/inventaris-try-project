@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aset extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'IDAset';
     protected $table = 'aset';
     protected $guarded = [];
 }

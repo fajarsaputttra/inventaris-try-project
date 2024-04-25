@@ -10,19 +10,28 @@
         <th>Tanggal Pembelian</th>
         <th>Nilai Aset</th>
         <th>Catatan</th>
+        <th>AKSI</th>
     </tr>
-    @foreach($aset as $aset)
+    @foreach($aset as $as)
     <tr>
-        <td>{{$aset->IDAset}}</td>
-        <td>{{$aset->NamaAset}}</td>
-        <td>{{$aset->JenisAset}}</td>
-        <td>{{$aset->Deskripsi}}</td>
-        <td>{{$aset->IDLokasi}}</td>
-        <td>{{$aset->IDKategori}}</td>
-        <td>{{$aset->Kondisi}}</td>
-        <td>{{$aset->TanggalPembelian}}</td>
-        <td>{{$aset->NilaiAset}}</td>
-        <td>{{$aset->Catatan}}</td>
+        <td>{{$as->IDAset}}</td>
+        <td>{{$as->NamaAset}}</td>
+        <td>{{$as->JenisAset}}</td>
+        <td>{{$as->Deskripsi}}</td>
+        <td>{{$as->IDLokasi}}</td>
+        <td>{{$as->IDKategori}}</td>
+        <td>{{$as->Kondisi}}</td>
+        <td>{{$as->TanggalPembelian}}</td>
+        <td>{{$as->NilaiAset}}</td>
+        <td>{{$as->Catatan}}</td>
+        <td>
+            <a href="/aset/{{$as->IDAset}}/edit">Edit</a>
+            <form action="/aset/{{$as->IDAset}}" method="POST">
+                @csrf
+                @method('delete')
+                <input type="submit" value="Delete">
+            </form>
+        </td>
     </tr>
     @endforeach
 </table>

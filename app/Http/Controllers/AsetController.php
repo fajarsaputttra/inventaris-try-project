@@ -18,4 +18,19 @@ class AsetController extends Controller
         Aset::create($request->except(['_token','submit']));
         return redirect('/aset');
     }
+    public function edit($IDAset){
+        $aset = Aset::find($IDAset);
+        return view('aset.edit',(compact(['aset'])));
+    }
+
+    public function update($IDAset, Request $request){
+        $aset = Aset::find($IDAset);
+        $aset->update($request->except(['_token','submit']));
+        return redirect('/aset');
+    }
+    public function destroy($IDAset){
+        $aset = Aset::find($IDAset);
+        $aset->delete();
+        return redirect('/aset');
+    }
 }

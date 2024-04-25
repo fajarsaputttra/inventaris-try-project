@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class KategoriAset extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'IDKategori';
     protected $table = 'kategoriaset';
+    protected $guarded = [];
 }
