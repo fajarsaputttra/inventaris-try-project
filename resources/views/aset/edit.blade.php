@@ -48,13 +48,9 @@
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <div class="card-body">
-                            <form action="/aset/{{$aset->IDAset}}" method="POST">
+                            <form action="/aset/{{$aset->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <div class="form-group">
-                                    <label for="IDAset">ID Aset</label>
-                                    <input type="text" class="form-control" name="IDAset" value="{{$aset->IDAset}}" readonly>
-                                </div>
                                 <div class="form-group">
                                     <label for="NamaAset">Nama Aset</label>
                                     <input type="text" class="form-control" name="NamaAset" value="{{$aset->NamaAset}}">

@@ -50,10 +50,6 @@
                                 <form action="/kategoriaset/store" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="IDKategori">ID Kategori</label>
-                                        <input type="text" class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="NamaKategori">Nama Kategori</label>
                                         <input type="text" class="form-control" name="NamaKategori" placeholder="Masukkan Nama Kategori">
                                     </div>

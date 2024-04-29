@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('aset', function (Blueprint $table) {
-            $table->id('IDAset');
+            $table->id();
             $table->string('NamaAset');
             $table->string('JenisAset');
             $table->text('Deskripsi');
-            $table->unsignedBigInteger('IDLokasi'); //foreign key
-            $table->unsignedBigInteger('IDKategori'); //foreign key
+            $table->unsignedBigInteger('IDLokasi'); //foreign Key Lokasi aset
+            $table->foreign('IDLokasi')->references('id')->on('lokasiaset');
+            $table->unsignedBigInteger('IDKategori'); //foreign Key Kategori aset
+            $table->foreign('IDKategori')->references('id')->on('kategoriaset');
             $table->enum('Kondisi', ['Good', 'Bad']);
             $table->date('TanggalPembelian');
             $table->integer('NilaiAset');

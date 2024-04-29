@@ -11,7 +11,7 @@
                         <img src="{{ asset('lte')}}/dist/img/diskominfotik.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Fajar Saputra</a>
+                        <a href="#" class="d-block">Tim PKL UTI Cui</a>
                     </div>
                 </div>
 

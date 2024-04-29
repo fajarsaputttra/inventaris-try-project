@@ -50,7 +50,6 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th>Id Aset</th>
                                         <th>Nama Aset</th>
                                         <th>Jenis Aset</th>
                                         <th>Deskripsi</th>
@@ -66,7 +65,6 @@
                                 <tbody>
                                     @foreach ($aset as $as)
                                         <tr>
-                                            <td>{{ $as->IDAset }}</td>
                                             <td>{{ $as->NamaAset }}</td>
                                             <td>{{ $as->JenisAset }}</td>
                                             <td>{{ $as->Deskripsi }}</td>
@@ -77,11 +75,11 @@
                                             <td>{{ $as->NilaiAset }}</td>
                                             <td>{{ $as->Catatan }}</td>
                                             <td>
-                                                <a href="/aset/{{ $as->IDAset }}/edit" class="btn btn-primary"><i class="fas fa-pen">Edit</i></a>
-                                                <a href="#" class="btn btn-danger" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form').submit(); }">
+                                                <a href="/aset/{{ $as->id }}/edit" class="btn btn-primary"><i class="fas fa-pen">Edit</i></a>
+                                                <a href="#" class="btn btn-danger" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form-{{ $as->id }}').submit(); }">
                                                     <i class="fas fa-trash-alt"></i> Hapus
                                                 </a>
-                                                <form id="delete-form" action="/aset/{{ $as->IDAset }}" method="POST" style="display: none;">
+                                                <form id="delete-form-{{ $as->id }}" action="/aset/{{ $as->id }}" method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>                                               

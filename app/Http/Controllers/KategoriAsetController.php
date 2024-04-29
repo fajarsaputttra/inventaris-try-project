@@ -18,17 +18,17 @@ class KategoriAsetController extends Controller
         KategoriAset::create($request->except(['_token','submit']));
         return redirect('/kategoriaset');
     }
-    public function edit($IDKategori){
-        $kategoriaset = KategoriAset::find($IDKategori);
+    public function edit($id){
+        $kategoriaset = KategoriAset::find($id);
         return view('kategoriaset.edit',(compact(['kategoriaset'])));
     }
-    public function update($IDKategori, Request $request){
-        $kategoriaset = KategoriAset::find($IDKategori);
+    public function update($id, Request $request){
+        $kategoriaset = KategoriAset::find($id);
         $kategoriaset->update($request->except(['_token','submit']));
         return redirect('/kategoriaset');
     }
-    public function destroy($IDKategori){
-        $kategoriaset = KategoriAset::findOrFail($IDKategori);
+    public function destroy($id){
+        $kategoriaset = KategoriAset::findOrFail($id);
         $kategoriaset->delete();
         return redirect('/kategoriaset');
     }

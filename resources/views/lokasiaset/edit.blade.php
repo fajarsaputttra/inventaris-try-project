@@ -47,13 +47,9 @@
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <div class="card-body">
-                            <form action="/lokasiaset/{{$lokasiaset->IDLokasi}}" method="POST">
+                            <form action="/lokasiaset/{{$lokasiaset->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <div class="form-group">
-                                    <label for="IDLokasi">ID Lokasi</label>
-                                    <input type="text" class="form-control" name="IDLokasi" value="{{$lokasiaset->IDLokasi}}" readonly>
-                                </div>
                                 <div class="form-group">
                                     <label for="NamaLokasi">Nama Lokasi</label>
                                     <input type="text" class="form-control" name="NamaLokasi" value="{{$lokasiaset->NamaLokasi}}">

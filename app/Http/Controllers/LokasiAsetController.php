@@ -18,17 +18,17 @@ class LokasiAsetController extends Controller
         LokasiAset::create($request->except(['_token','submit']));
         return redirect('/lokasiaset');
     }
-    public function edit($IDLokasi){
-        $lokasiaset = LokasiAset::find($IDLokasi);
+    public function edit($id){
+        $lokasiaset = LokasiAset::find($id);
         return view('lokasiaset.edit',(compact(['lokasiaset'])));
     }
-    public function update($IDLokasi, Request $request){
-        $lokasiaset = LokasiAset::find($IDLokasi);
+    public function update($id, Request $request){
+        $lokasiaset = LokasiAset::find($id);
         $lokasiaset->update($request->except(['_token','submit']));
         return redirect('/lokasiaset');
     }
-    public function destroy($IDLokasi){
-        $lokasiaset = LokasiAset::find($IDLokasi);
+    public function destroy($id){
+        $lokasiaset = LokasiAset::find($id);
         $lokasiaset->delete();
         return redirect('/lokasiaset');
     }

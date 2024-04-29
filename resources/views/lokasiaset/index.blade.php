@@ -51,7 +51,6 @@
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                         <tr>
-                                            <th>Id Lokasi</th>
                                             <th>Nama Lokasi</th>
                                             <th>Deskripsi</th>
                                             <th>KunKer</th>
@@ -61,18 +60,17 @@
                                     <tbody>
                                         @foreach ($lokasiaset as $lokaset)
                                             <tr>
-                                                <td>{{ $lokaset->IDLokasi }}</td>
                                                 <td>{{ $lokaset->NamaLokasi }}</td>
                                                 <td>{{ $lokaset->Deskripsi }}</td>
                                                 <td>{{ $lokaset->KunKer }}</td>
                                                 <td>
-                                                    <a href="/lokasiaset/{{$lokaset->IDLokasi}}/edit" class="btn btn-primary"><i
+                                                    <a href="/lokasiaset/{{$lokaset->id}}/edit" class="btn btn-primary"><i
                                                             class="fas fa-pen">Edit</i></a>
                                                     <a href="#" class="btn btn-danger"
-                                                        onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form').submit(); }">
+                                                        onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form-{{ $lokaset->id }}').submit(); }">
                                                         <i class="fas fa-trash-alt"></i> Hapus
                                                     </a>
-                                                    <form id="delete-form" action="/lokasiaset/{{$lokaset->IDLokasi}}" method="POST" style="display: none;">
+                                                    <form id="delete-form-{{ $lokaset->id }}" action="/lokasiaset/{{ $lokaset->id }}" method="POST" style="display: none;">
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>

@@ -50,10 +50,6 @@
                                 <form action="/lokasiaset/store" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="IDLokasi">ID Lokasi</label>
-                                        <input type="text" class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="NamaLokasi">Nama Lokasi</label>
                                         <input type="text" class="form-control" name="NamaLokasi" placeholder="Masukkan Nama Lokasi">
                                     </div>

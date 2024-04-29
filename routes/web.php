@@ -3,6 +3,7 @@
 use App\Http\Controllers\AsetController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriAsetController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokasiAsetController;
 use App\Models\KategoriAset;
 use App\Models\LokasiAset;
@@ -23,6 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login',[LoginController::class,'login']);
+
 // Aset
 Route::get('/aset',[AsetController::class,'index']);
 Route::get('/aset/create',[AsetController::class,'create']);
@@ -37,12 +40,12 @@ Route::get('/kategoriaset/create',[KategoriAsetController::class,'create']);
 Route::post('/kategoriaset/store',[KategoriAsetController::class,'store']);
 Route::get('/kategoriaset/{IDKategori}/edit',[KategoriAsetController::class,'edit']);
 Route::put('/kategoriaset/{IDKategori}',[KategoriAsetController::class,'update']);
-Route::delete('/kategoriaset/{IDkategori}',[KategoriAsetController::class,'destroy']);
+Route::delete('/kategoriaset/{IDKategori}',[KategoriAsetController::class,'destroy']);
 
 //Lokasi Aset
 Route::get('/lokasiaset',[LokasiAsetController::class,'index']);
 Route::get('/lokasiaset/create',[LokasiAsetController::class,'create']);
 Route::post('/lokasiaset/store',[LokasiAsetController::class,'store']);
-Route::get('/lokasiaset/{IDLokasi}/edit',[LokasiAsetController::class,'edit']);
-Route::put('/lokasiaset/{IDLokasi}',[LokasiAsetController::class,'update']);
-Route::delete('/lokasiaset/{IDLokasi}',[LokasiAsetController::class,'destroy']);
+Route::get('/lokasiaset/{id}/edit',[LokasiAsetController::class,'edit']);
+Route::put('/lokasiaset/{id}',[LokasiAsetController::class,'update']);
+Route::delete('/lokasiaset/{id}',[LokasiAsetController::class,'destroy']);

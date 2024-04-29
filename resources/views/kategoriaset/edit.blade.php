@@ -47,13 +47,9 @@
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <div class="card-body">
-                            <form action="/kategoriaset/{{$kategoriaset->IDKategori}}" method="POST">
+                            <form action="/kategoriaset/{{$kategoriaset->id}}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <div class="form-group">
-                                    <label for="IDKategori">ID Kategori</label>
-                                    <input type="text" class="form-control" name="IDKategori" value="{{$kategoriaset->IDKategori}}" readonly>
-                                </div>
                                 <div class="form-group">
                                     <label for="NamaKategori">Nama Kategori</label>
                                     <input type="text" class="form-control" name="NamaKategori" value="{{$kategoriaset->NamaKategori}}">

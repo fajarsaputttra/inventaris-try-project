@@ -51,7 +51,6 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th>Id Aset</th>
                                         <th>Nama Kategori</th>
                                         <th>AKSI</th>
                                     </tr>
@@ -59,14 +58,13 @@
                                 <tbody>
                                     @foreach($kategoriaset as $kataset)
                                         <tr>
-                                            <td>{{$kataset->IDKategori}}</td>
                                             <td>{{$kataset->NamaKategori}}</td>
                                             <td>
-                                                <a href="/kategoriaset/{{$kataset->IDKategori}}/edit" class="btn btn-primary"><i class="fas fa-pen">Edit</i></a>
-                                                <a href="#" class="btn btn-danger" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form').submit(); }">
+                                                <a href="/kategoriaset/{{$kataset->id}}/edit" class="btn btn-primary"><i class="fas fa-pen">Edit</i></a>
+                                                <a href="#" class="btn btn-danger" onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus aset ini?')) { document.getElementById('delete-form-{{ $kataset->id }}').submit(); }">
                                                     <i class="fas fa-trash-alt"></i> Hapus
                                                 </a>
-                                                <form id="delete-form" action="/kategoriaset/{{ $kataset->IDKategori }}" method="POST" style="display: none;">
+                                                <form id="delete-form-{{ $kataset->id }}" action="/kategoriaset/{{ $kataset->id }}" method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>                                               

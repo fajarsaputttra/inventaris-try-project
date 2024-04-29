@@ -50,10 +50,6 @@
                                 <form action="/aset/store" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="IDAset">ID Aset</label>
-                                        <input type="text" class="form-control" name="IDAset" placeholder="Masukkan ID Aset">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="NamaAset">Nama Aset</label>
                                         <input type="text" class="form-control" name="NamaAset" placeholder="Masukkan Nama Aset">
                                     </div>
