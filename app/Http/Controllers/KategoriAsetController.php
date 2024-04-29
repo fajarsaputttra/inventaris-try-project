@@ -28,7 +28,7 @@ class KategoriAsetController extends Controller
         return redirect('/kategoriaset');
     }
     public function destroy($IDKategori){
-        $kategoriaset = KategoriAset::find($IDKategori);
+        $kategoriaset = KategoriAset::findOrFail($IDKategori);
         $kategoriaset->delete();
         return redirect('/kategoriaset');
     }

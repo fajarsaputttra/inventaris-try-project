@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AsetController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriAsetController;
 use App\Http\Controllers\LokasiAsetController;
 use App\Models\KategoriAset;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 // Aset
@@ -36,7 +37,7 @@ Route::get('/kategoriaset/create',[KategoriAsetController::class,'create']);
 Route::post('/kategoriaset/store',[KategoriAsetController::class,'store']);
 Route::get('/kategoriaset/{IDKategori}/edit',[KategoriAsetController::class,'edit']);
 Route::put('/kategoriaset/{IDKategori}',[KategoriAsetController::class,'update']);
-Route::delete('kategoriaset/{IDkategori}',[KategoriAsetController::class,'destroy']);
+Route::delete('/kategoriaset/{IDkategori}',[KategoriAsetController::class,'destroy']);
 
 //Lokasi Aset
 Route::get('/lokasiaset',[LokasiAsetController::class,'index']);

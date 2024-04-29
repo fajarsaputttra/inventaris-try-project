@@ -29,7 +29,7 @@ class AsetController extends Controller
         return redirect('/aset');
     }
     public function destroy($IDAset){
-        $aset = Aset::find($IDAset);
+        $aset = Aset::findOrFail($IDAset);
         $aset->delete();
         return redirect('/aset');
     }
