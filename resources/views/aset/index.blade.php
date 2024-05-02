@@ -24,6 +24,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+        <link rel="stylesheet" href="cdn.datatables.net/2.0.5/css/dataTables.dataTables.min.css">
             <!-- /.row -->
             <div class="row">
                 <div class="col-12">
@@ -47,14 +48,14 @@
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <div class="card-body">
-                            <table class="table table-hover text-nowrap">
+                            <table class="table table-hover text-nowrap" id="mytable">
                                 <thead>
                                     <tr>
                                         <th>Nama Aset</th>
                                         <th>Jenis Aset</th>
                                         <th>Deskripsi</th>
-                                        <th>ID Lokasi</th>
-                                        <th>ID Kategori</th>
+                                        <th>Nama Lokasi</th>
+                                        <th>Nama Kategori</th>
                                         <th>Kondisi</th>
                                         <th>Tanggal Pembelian</th>
                                         <th>Nilai Aset</th>
@@ -68,8 +69,8 @@
                                             <td>{{ $as->NamaAset }}</td>
                                             <td>{{ $as->JenisAset }}</td>
                                             <td>{{ $as->Deskripsi }}</td>
-                                            <td>{{ $as->IDLokasi }}</td>
-                                            <td>{{ $as->IDKategori }}</td>
+                                            <td>{{ $as->lokasiaset->first()->NamaLokasi }}</td>
+                                            <td>{{ $as->kategoriaset->first()->NamaKategori }}</td>
                                             <td>{{ $as->Kondisi }}</td>
                                             <td>{{ $as->TanggalPembelian }}</td>
                                             <td>{{ $as->NilaiAset }}</td>
@@ -99,6 +100,15 @@
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+        });
+    </script>
+@endpush
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

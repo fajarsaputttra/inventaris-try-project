@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aset;
+use App\Models\LokasiAset;
+use App\Models\KategoriAset;
 use Illuminate\Http\Request;
 
 class AsetController extends Controller
 {
     public function index(){
         $aset = Aset::all();
-        return view('aset.index',compact(['aset']));
+        $laset = LokasiAset::with('aset')->get();
+        $kaset = KategoriAset::with('aset')->get();
+        return view('aset.index',compact(['aset', 'laset', 'kaset']));
     }
     public function create(){
-        return view('aset.create');
+        $laset = LokasiAset::all();
+        $kaset = KategoriAset::all();
+        return view('aset.create', compact('laset', 'kaset'));
     }
     public function store(Request $request){
         Aset::create($request->except(['_token','submit']));

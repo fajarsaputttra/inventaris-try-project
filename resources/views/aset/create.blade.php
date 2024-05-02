@@ -63,11 +63,21 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="IDLokasi">ID Lokasi</label>
-                                        <input type="text" class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
+                                        <select class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
+                                            <option value="">- Pilih Lokasi -</option>
+                                            @foreach ($laset as $item)
+                                                <option value="{{ $item -> id }}">{{ $item->NamaLokasi }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="IDKategori">ID Kategori</label>
-                                        <input type="text" class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
+                                        <select class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
+                                        <option value="">- Pilih Kategori -</option>
+                                            @foreach ($kaset as $item)
+                                                <option value="{{ $item -> id }}">{{ $item->NamaKategori }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="Kondisi">Kondisi</label>
