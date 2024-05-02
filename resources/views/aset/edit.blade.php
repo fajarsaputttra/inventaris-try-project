@@ -64,13 +64,22 @@
                                     <textarea class="form-control" name="Deskripsi" rows="3">{{$aset->Deskripsi}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="IDLokasi">ID Lokasi</label>
-                                    <input type="text" class="form-control" name="IDLokasi" value="{{$aset->IDLokasi}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="IDKategori">ID Kategori</label>
-                                    <input type="text" class="form-control" name="IDKategori" value="{{$aset->IDKategori}}">
-                                </div>
+                                        <label for="IDLokasi">ID Lokasi</label>
+                                        <select class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
+                                            <option value="">- Pilih Lokasi -</option>
+                                            @foreach ($laset as $item)
+                                                <option value="{{ $item -> id }}">{{ $item->NamaLokasi }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="IDKategori">ID Kategori</label>
+                                        <select class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
+                                        <option value="">- Pilih Kategori -</option>
+                                            @foreach ($kaset as $item)
+                                                <option value="{{ $item -> id }}">{{ $item->NamaKategori }}</option>
+                                            @endforeach
+                                        </select>
                                 <div class="form-group">
                                     <label for="Kondisi">Kondisi</label>
                                     <select class="form-control" name="Kondisi">

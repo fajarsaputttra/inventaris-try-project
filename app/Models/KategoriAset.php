@@ -10,4 +10,13 @@ class KategoriAset extends Model
     use HasFactory;
     protected $table = 'kategoriaset';
     protected $guarded = [];
+
+    public function aset()
+    {
+        return $this->hasMany(Aset::class, 'IDKategori');
+    }
+
+    // public function Aset(){
+    //     return $this->belongsTo(Aset::class, 'NamaKategori');
+    // }
 }
