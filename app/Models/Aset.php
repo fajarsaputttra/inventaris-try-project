@@ -12,17 +12,10 @@ class Aset extends Model
     protected $guarded = [];
 
     public function lokasiaset(){
-    return $this->hasMany(LokasiAset::class, 'id');
+    return $this->belongsTo(LokasiAset::class, 'IDLokasi');
     }
 
     public function kategoriaset(){
-    return $this->hasMany(KategoriAset::class, 'id');
+    return $this->belongsTo(KategoriAset::class, 'IDKategori');
     }
-
-    // public function laset(){
-    //     return $this->hasMany(LokasiAset::class, 'IDLokasi');
-    // }
-    // public function kaset(){
-    //     return $this->hasMany(KategoriAset::class, 'IDKategori');
-    // }
 }

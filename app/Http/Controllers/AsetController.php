@@ -24,11 +24,19 @@ class AsetController extends Controller
         Aset::create($request->except(['_token','submit']));
         return redirect('/aset');
     }
+
     public function edit($IDAset){
         $aset = Aset::find($IDAset);
-        return view('aset.edit',(compact(['aset'])));
+    
+        if($aset) {
+            $laset = LokasiAset::all();
+            $kaset = KategoriAset::all();
+            return view('aset.edit', compact('aset', 'laset', 'kaset'));
+        } else {
+            return redirect('/aset')->with('error', 'Data Aset tidak ditemukan');
+        }
     }
-
+    
     public function update($IDAset, Request $request){
         $aset = Aset::find($IDAset);
         $aset->update($request->except(['_token','submit']));

@@ -69,8 +69,8 @@
                                             <td>{{ $as->NamaAset }}</td>
                                             <td>{{ $as->JenisAset }}</td>
                                             <td>{{ $as->Deskripsi }}</td>
-                                            <td>{{ $as->lokasiaset->first()->NamaLokasi }}</td>
-                                            <td>{{ $as->kategoriaset->first()->NamaKategori }}</td>
+                                            <td>{{ $as->lokasiaset->NamaLokasi }}</td>
+                                            <td>{{ $as->kategoriaset->NamaKategori }}</td>
                                             <td>{{ $as->Kondisi }}</td>
                                             <td>{{ $as->TanggalPembelian }}</td>
                                             <td>{{ $as->NilaiAset }}</td>

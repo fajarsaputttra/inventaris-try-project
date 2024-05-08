@@ -15,8 +15,4 @@ class LokasiAset extends Model
     {
         return $this->hasMany(Aset::class, 'IDLokasi');
     }
-
-    // public function Aset(){
-    //     return $this->belongsTo(Aset::class, 'NamaLokasi');
-    // }
 }

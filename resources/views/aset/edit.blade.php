@@ -64,18 +64,18 @@
                                     <textarea class="form-control" name="Deskripsi" rows="3">{{$aset->Deskripsi}}</textarea>
                                 </div>
                                 <div class="form-group">
-                                        <label for="IDLokasi">ID Lokasi</label>
-                                        <select class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
-                                            <option value="">- Pilih Lokasi -</option>
+                                        <label for="IDLokasi">Nama Lokasi</label>
+                                        <select class="form-control" name="IDLokasi">
+                                            <option value="">{{ $aset->lokasiaset->NamaLokasi ?? '' }}</option>
                                             @foreach ($laset as $item)
                                                 <option value="{{ $item -> id }}">{{ $item->NamaLokasi }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="IDKategori">ID Kategori</label>
-                                        <select class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
-                                        <option value="">- Pilih Kategori -</option>
+                                        <label for="IDKategori">Nama Kategori</label>
+                                        <select class="form-control" name="IDKategori">
+                                            <option value="">{{ $aset->kategoriaset->NamaKategori ?? '' }}</option>
                                             @foreach ($kaset as $item)
                                                 <option value="{{ $item -> id }}">{{ $item->NamaKategori }}</option>
                                             @endforeach

@@ -15,8 +15,4 @@ class KategoriAset extends Model
     {
         return $this->hasMany(Aset::class, 'IDKategori');
     }
-
-    // public function Aset(){
-    //     return $this->belongsTo(Aset::class, 'NamaKategori');
-    // }
 }

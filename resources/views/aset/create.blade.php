@@ -62,7 +62,7 @@
                                         <textarea class="form-control" name="Deskripsi" placeholder="Masukkan Deskripsi" rows="3"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="IDLokasi">ID Lokasi</label>
+                                        <label for="IDLokasi">Nama Lokasi</label>
                                         <select class="form-control" name="IDLokasi" placeholder="Masukkan ID Lokasi">
                                             <option value="">- Pilih Lokasi -</option>
                                             @foreach ($laset as $item)
@@ -71,7 +71,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="IDKategori">ID Kategori</label>
+                                        <label for="IDKategori">Nama Kategori</label>
                                         <select class="form-control" name="IDKategori" placeholder="Masukkan ID Kategori">
                                         <option value="">- Pilih Kategori -</option>
                                             @foreach ($kaset as $item)

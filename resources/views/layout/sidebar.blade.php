@@ -11,7 +11,7 @@
                         <img src="{{ asset('lte')}}/dist/img/diskominfotik.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Tim PKL UTI Cui</a>
+                        <a href="#" class="d-block">Tim PKL UTI</a>
                     </div>
                 </div>
 
@@ -43,19 +43,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./aset" class="nav-link">
+                                    <a href="/aset" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Aset</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./kategoriaset" class="nav-link">
+                                    <a href="/kategoriaset" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p> Kategori Aset</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./lokasiaset" class="nav-link">
+                                    <a href="/lokasiaset" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lokasi Aset</p>
                                     </a>

@@ -49,10 +49,3 @@ Route::post('/lokasiaset/store',[LokasiAsetController::class,'store']);
 Route::get('/lokasiaset/{id}/edit',[LokasiAsetController::class,'edit']);
 Route::put('/lokasiaset/{id}',[LokasiAsetController::class,'update']);
 Route::delete('/lokasiaset/{id}',[LokasiAsetController::class,'destroy']);
-
-//select
-Route::get('selectlokasi',[LokasiController::class, 'lokasiaset'])->name('lokasiaset.index');
-
-Route::get('/datatable', function () {
-    return view('datatable.index');
-});
