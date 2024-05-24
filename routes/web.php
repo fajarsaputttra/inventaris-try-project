@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\AsetController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriAsetController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokasiAsetController;
+use App\Http\Controllers\UserController;
 use App\Models\KategoriAset;
 use App\Models\LokasiAset;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +23,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route Awal mengarah ke welcome
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('/login',[LoginController::class,'login']);
+Route::get('/dashboard',[DashboardController::class,'index']);
+
+//login
+Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::post('/login-proses',[LoginController::class,'login_proses'])->name('login-proses');
+
+//user
+Route::get('/user',[UserController::class,'index'])->name('index');
 
 // Aset
 Route::get('/aset',[AsetController::class,'index']);
